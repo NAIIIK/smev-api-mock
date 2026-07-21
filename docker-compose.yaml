@@ -1,0 +1,7 @@
+services:
+  smev-api-mock:
+    build: .
+    container_name: smev-api-mock
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
