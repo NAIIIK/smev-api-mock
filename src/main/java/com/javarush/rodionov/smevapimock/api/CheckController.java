@@ -19,15 +19,32 @@ import java.util.concurrent.ThreadLocalRandom;
 @RequestMapping("/smev-api/v1")
 public class CheckController {
 
-    @PostMapping("/check")
-    public ResponseEntity<CheckResponse> check(@RequestBody CheckRequest checkRequest){
+    @PostMapping(
+            value = "/CheckPassport"
+//            consumes = MediaType.APPLICATION_JSON_VALUE,
+//            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    // http://localhost:8081/api/check/v1/CheckPassport
+    public ResponseEntity<CheckResponse> check(
+//            @RequestHeader(value = "x-token", required = false) String token,
+            @RequestBody CheckRequest req
+    ) {
         boolean valid = ThreadLocalRandom.current().nextBoolean();
 
-        CheckResponse body = new CheckResponse(valid);
+        CheckResponse body = new CheckResponse();
+        if (valid) {
+            body.isValid = true;
+            body.status = "300";
+            body.decodeDocStatus = "Паспорт действителен";
+        } else {
+            body.isValid = false;
+            body.status = "301";
+            body.decodeDocStatus = "Паспорт недействителен";
+        }
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("content-type", "application/json");
-        headers.add("date", Instant.now().toString());
+        headers.add("content-type", "application/json; charset=utf-8");
+        headers.add("date", "Mon,01 Sep 2025 11:55:38 GMT");
         headers.add("server", "Microsoft-IIS/10.0");
         headers.add("x-powered-by", "ASP.NET");
 
