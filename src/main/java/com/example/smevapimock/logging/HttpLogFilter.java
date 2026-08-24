@@ -1,4 +1,4 @@
-package com.javarush.rodionov.smevapimock.logging;
+package com.example.smevapimock.logging;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

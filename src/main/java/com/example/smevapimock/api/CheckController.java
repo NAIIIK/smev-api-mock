@@ -1,7 +1,7 @@
-package com.javarush.rodionov.smevapimock.api;
+package com.example.smevapimock.api;
 
-import com.javarush.rodionov.smevapimock.model.CheckRequest;
-import com.javarush.rodionov.smevapimock.model.CheckResponse;
+import com.example.smevapimock.model.CheckRequest;
+import com.example.smevapimock.model.CheckResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

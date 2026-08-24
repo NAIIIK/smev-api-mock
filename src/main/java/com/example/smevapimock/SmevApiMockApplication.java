@@ -1,4 +1,4 @@
-package com.javarush.rodionov.smevapimock;
+package com.example.smevapimock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

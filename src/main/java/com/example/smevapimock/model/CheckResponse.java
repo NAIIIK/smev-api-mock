@@ -1,4 +1,4 @@
-package com.javarush.rodionov.smevapimock.model;
+package com.example.smevapimock.model;
 
 import lombok.*;
 

@@ -1,6 +1,10 @@
 server:
   port: 8081
 
+spring:
+  application:
+    name: smev-api-mock
+
 logging:
   level:
     HTTP: INFO
