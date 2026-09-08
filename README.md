@@ -23,7 +23,7 @@ Default port: `8081`. No database or other dependencies required.
 |---|---|---|
 | `POST` | `/smev-api/v1/CheckPassport` | Check a passport; returns valid/invalid |
 
-The result is **randomized on every call** — this mock doesn't validate
+The result is **randomized on every call** - this mock doesn't validate
 anything real, it exists to exercise the async check flow in
 `ms-passport-inspector` end-to-end. No authentication is enforced.
 
