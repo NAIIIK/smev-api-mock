@@ -19,8 +19,8 @@ Default port: `8081`. No database or other dependencies required.
 
 ## API
 
-| Method | Path | Purpose |
-|---|---|---|
+| Method | Path                         | Purpose                                 |
+|--------|------------------------------|-----------------------------------------|
 | `POST` | `/smev-api/v1/CheckPassport` | Check a passport; returns valid/invalid |
 
 The result is **randomized on every call** - this mock doesn't validate
