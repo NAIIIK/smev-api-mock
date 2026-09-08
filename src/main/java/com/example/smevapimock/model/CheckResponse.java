@@ -9,7 +9,7 @@ import lombok.*;
 public class CheckResponse {
     public boolean isValid = true;
     public String status = "300";
-    public String decodeDocStatus = "Паспорт действителен";
+    public String decodeDocStatus = "Passport is valid";
     public String issuerCode = null;
     public String issueDate = null;
     public String invalidityReason = null;

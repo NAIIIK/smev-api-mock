@@ -18,14 +18,8 @@ import java.util.concurrent.ThreadLocalRandom;
 @RequestMapping("/smev-api/v1")
 public class CheckController {
 
-    @PostMapping(
-            value = "/CheckPassport"
-//            consumes = MediaType.APPLICATION_JSON_VALUE,
-//            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    // http://localhost:8081/api/check/v1/CheckPassport
+    @PostMapping(value = "/CheckPassport")
     public ResponseEntity<CheckResponse> check(
-//            @RequestHeader(value = "x-token", required = false) String token,
             @RequestBody CheckRequest req
     ) {
         boolean valid = ThreadLocalRandom.current().nextBoolean();
@@ -34,11 +28,11 @@ public class CheckController {
         if (valid) {
             body.isValid = true;
             body.status = "300";
-            body.decodeDocStatus = "Паспорт действителен";
+            body.decodeDocStatus = "Passport is valid";
         } else {
             body.isValid = false;
             body.status = "301";
-            body.decodeDocStatus = "Паспорт недействителен";
+            body.decodeDocStatus = "Passport is not valid";
         }
 
         HttpHeaders headers = new HttpHeaders();
